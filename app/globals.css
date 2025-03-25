@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 350 30% 96%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 330 73% 60%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 340 20% 92%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 340 20% 92%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 330 73% 95%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 330 73% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 330 73% 60%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 330 73% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 330 73% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-600;
+}
+
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply -translate-y-1;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+
+.nav-link {
+  @apply relative px-3 py-2 transition-colors duration-300 hover:text-primary;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.nav-link.active::after {
+  @apply w-full;
+}
+
+.animated-bg {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.dark .animated-bg {
+  background: linear-gradient(45deg, #1a1a1a, #2d2d2d, #1a1a1a);
+}
+
+.light .animated-bg {
+  background: linear-gradient(45deg, #fdf2f8, #fce7f3, #fdf2f8);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.skill-card {
+  @apply relative overflow-hidden rounded-lg p-6 transition-all duration-300 bg-card;
+}
+
+.skill-card:hover {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+}
+
+.skill-card::before {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-r from-pink-500/10 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.skill-card:hover::before {
+  @apply opacity-100;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-lg transition-all duration-300 bg-card;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+.project-card::after {
+  content: "";
+  @apply absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.project-card:hover::after {
+  @apply opacity-100;
+}
+
+.project-card .project-content {
+  @apply absolute bottom-0 left-0 w-full p-6 translate-y-full transition-transform duration-300 z-10;
+}
+
+.project-card:hover .project-content {
+  @apply translate-y-0;
+}
+
+.contact-input {
+  @apply bg-secondary/50 border-0 focus-visible:ring-1 focus-visible:ring-primary/50 transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300;
+  box-shadow: 0 4px 14px rgba(236, 72, 153, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6);
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold mb-8 gradient-text inline-block;
+}
+
+.section-heading::after {
+  content: "";
+  @apply block h-1 bg-gradient-to-r from-pink-500 to-pink-300 rounded-full mt-2 w-1/2;
+}
+
+/* Light mode specific styles */
+.light .project-card::after {
+  @apply from-black/50;
+}
+
+.light .project-card .project-content {
+  @apply text-white;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Decorative elements */
+.decoration-dot {
+  @apply absolute rounded-full bg-primary/30 animate-pulse;
+}
+
+.decoration-line {
+  @apply absolute bg-gradient-to-r from-pink-500/20 to-transparent;
+}
+
