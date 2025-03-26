@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
@@ -69,18 +69,29 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="border-none shadow-xl bg-card/50 backdrop-blur-sm">
+          <Card className="border-none shadow-xl bg-card/50 backdrop-blur-sm overflow-hidden">
             <CardContent className="p-8">
-              <div className="flex flex-col items-center text-center">
-                <p className="text-lg md:text-xl mb-8 italic">"{testimonials[activeIndex].content}"</p>
-                <Avatar className="h-16 w-16 mb-4 border-2 border-primary/20">
-                  <AvatarImage src={testimonials[activeIndex].avatar} alt={testimonials[activeIndex].author} />
-                  <AvatarFallback>{testimonials[activeIndex].author.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <h3 className="font-semibold text-lg">{testimonials[activeIndex].author}</h3>
-                  <p className="text-muted-foreground">{testimonials[activeIndex].position}</p>
-                </div>
+              <div className="min-h-[250px] flex flex-col items-center justify-center text-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeIndex}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex flex-col items-center"
+                  >
+                    <p className="text-lg md:text-xl mb-8 italic">"{testimonials[activeIndex].content}"</p>
+                    <Avatar className="h-16 w-16 mb-4 border-2 border-primary/20">
+                      <AvatarImage src={testimonials[activeIndex].avatar} alt={testimonials[activeIndex].author} />
+                      <AvatarFallback>{testimonials[activeIndex].author.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h3 className="font-semibold text-lg">{testimonials[activeIndex].author}</h3>
+                      <p className="text-muted-foreground">{testimonials[activeIndex].position}</p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </CardContent>
           </Card>
@@ -92,6 +103,8 @@ export default function Testimonials() {
               className="rounded-full border-primary/20 hover:bg-primary/10"
               onClick={prevTestimonial}
               aria-label="Previous testimonial"
+              data-tooltip-id="testimonial-tooltip"
+              data-tooltip-content="Previous testimonial"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -104,6 +117,8 @@ export default function Testimonials() {
                   }`}
                   onClick={() => setActiveIndex(index)}
                   aria-label={`Go to testimonial ${index + 1}`}
+                  data-tooltip-id="testimonial-tooltip"
+                  data-tooltip-content={`Testimonial ${index + 1}`}
                 />
               ))}
             </div>
@@ -113,6 +128,8 @@ export default function Testimonials() {
               className="rounded-full border-primary/20 hover:bg-primary/10"
               onClick={nextTestimonial}
               aria-label="Next testimonial"
+              data-tooltip-id="testimonial-tooltip"
+              data-tooltip-content="Next testimonial"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>

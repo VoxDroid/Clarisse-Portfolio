@@ -1,16 +1,16 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Twitter, Code, Coffee } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://github.com/Clarrise", label: "GitHub" },
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/VoxDroid", label: "GitHub" },
     { icon: <Linkedin className="h-5 w-5" />, href: "#", label: "LinkedIn" },
     { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:clarisse@example.com", label: "Email" },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:voxdroid@github.com", label: "Email" },
   ]
 
   return (
@@ -35,10 +35,9 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-center md:text-right text-sm text-muted-foreground"
           >
-            <p className="mb-2 flex items-center justify-center md:justify-end">
-              Made with <Heart className="h-4 w-4 mx-1 text-primary" /> using Next.js and Rust
+            <p className="flex items-center justify-center md:justify-end">
+              <Code className="h-4 w-4 mr-1 text-primary" /> <a href="https://github.com/VoxDroid">github.com/VoxDroid</a>
             </p>
-            <p>Designed for developers who love beautiful code</p>
           </motion.div>
 
           <motion.div
@@ -54,8 +53,10 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-primary/20 hover:text-primary transition-colors"
+                className="p-2 rounded-full hover:bg-primary/20 hover:text-primary transition-all duration-300 hover:scale-110"
                 aria-label={link.label}
+                data-tooltip-id="social-tooltip"
+                data-tooltip-content={`Visit ${link.label}`}
               >
                 {link.icon}
               </a>

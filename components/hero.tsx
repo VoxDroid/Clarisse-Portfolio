@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.15),transparent_65%)]"></div>
       </div>
 

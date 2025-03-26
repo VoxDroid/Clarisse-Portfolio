@@ -3,13 +3,16 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
+import ParticlesBackground from "@/components/particles-background"
+import { TooltipProvider } from "@/components/tooltip-provider"
+import { TooltipContextProvider } from "@/context/tooltip-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Clarisse | Portfolio",
-  description: "Personal portfolio showcasing my skills and projects",
-    generator: 'v0.dev'
+  description: "Personal portfolios",
+  generator: "VoxDroid",
 }
 
 export default function RootLayout({
@@ -29,7 +32,11 @@ export default function RootLayout({
       </head>
       <body className="font-poppins bg-background">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
+          <TooltipContextProvider>
+            <ParticlesBackground />
+            <TooltipProvider />
+            {children}
+          </TooltipContextProvider>
         </ThemeProvider>
       </body>
     </html>

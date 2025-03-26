@@ -41,8 +41,10 @@ export function ScrollToTop() {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="rounded-full shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-12"
+            className="rounded-full shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground h-12 w-12 hover:scale-110 transition-transform duration-300"
             aria-label="Scroll to top"
+            data-tooltip-id="global-tooltip"
+            data-tooltip-content="Back to top"
           >
             <ArrowUp className="h-5 w-5" />
           </Button>

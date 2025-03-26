@@ -88,7 +88,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <Card className="h-full card-hover">
-                <CardContent className="p-6">
+                <CardContent className="p-6 card-content">
                   <div className="mb-4">{feature.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>

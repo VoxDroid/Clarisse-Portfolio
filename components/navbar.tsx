@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Menu, X, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./theme-toggle"
+import { TooltipToggle } from "./tooltip-toggle"
 
 interface NavbarProps {
   activeSection: string
@@ -54,7 +55,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
     <>
       <motion.header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled ? "bg-background/90 backdrop-blur-md shadow-md" : "bg-transparent"
+          isScrolled ? "backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -83,21 +84,26 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
+                data-tooltip-id="nav-tooltip"
+                data-tooltip-content={`Go to ${item.charAt(0).toUpperCase() + item.slice(1)}`}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </motion.a>
             ))}
 
             <div className="flex items-center ml-4 space-x-2">
+              <TooltipToggle />
               <ThemeToggle />
 
               <motion.a
-                href="https://github.com/Clarrise"
+                href="https://github.com/VoxDroid"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 }}
+                data-tooltip-id="social-tooltip"
+                data-tooltip-content="Visit GitHub"
               >
                 <Button size="icon" variant="ghost" className="rounded-full hover:bg-primary/20 hover:text-primary">
                   <Github className="h-5 w-5" />
@@ -108,6 +114,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
           </nav>
 
           <div className="flex items-center space-x-2 md:hidden">
+            <TooltipToggle />
             <ThemeToggle />
             <button
               className="text-foreground"
@@ -143,7 +150,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
               </a>
             ))}
 
-            <a href="https://github.com/Clarrise" target="_blank" rel="noopener noreferrer" className="mt-4">
+            <a href="https://github.com/VoxDroid" target="_blank" rel="noopener noreferrer" className="mt-4">
               <Button size="icon" variant="ghost" className="rounded-full hover:bg-primary/20 hover:text-primary">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>

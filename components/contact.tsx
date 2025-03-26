@@ -52,8 +52,8 @@ export default function Contact() {
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
-      value: "clarisse@example.com",
-      link: "mailto:clarisse@example.com",
+      value: "voxdroid@github.com",
+      link: "mailto:voxdroid@github.com",
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
@@ -64,7 +64,7 @@ export default function Contact() {
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Tokyo, Japan",
       link: null,
     },
   ]
@@ -98,18 +98,26 @@ export default function Contact() {
             {contactInfo.map((item, index) => (
               <motion.div
                 key={item.title}
-                className="flex items-start"
+                className="flex items-start group hover:bg-primary/5 p-3 rounded-lg transition-all duration-300 -ml-3"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 * index }}
+                data-tooltip-id="global-tooltip"
+                data-tooltip-content={item.link ? `Contact via ${item.title}` : item.value}
               >
-                <div className="mr-4 mt-1">{item.icon}</div>
+                <div className="mr-4 mt-1 transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">
+                  {item.icon}
+                </div>
                 <div>
                   <h4 className="font-medium">{item.title}</h4>
                   {item.link ? (
-                    <a href={item.link} className="text-muted-foreground hover:text-primary transition-colors">
-                      {item.value}
+                    <a
+                      href={item.link}
+                      className="text-muted-foreground hover:text-primary transition-colors relative overflow-hidden group-hover:underline"
+                    >
+                      <span className="relative z-10">{item.value}</span>
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                     </a>
                   ) : (
                     <p className="text-muted-foreground">{item.value}</p>
@@ -126,7 +134,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden hover:shadow-lg hover:shadow-primary/20 transition-all duration-500">
             <CardContent className="p-6">
               {isSubmitted ? (
                 <motion.div
@@ -135,7 +143,7 @@ export default function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                 >
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 text-primary mb-4">
-                    <Send className="h-8 w-8" />
+                    <Send className="h-8 w-8 animate-pulse" />
                   </div>
                   <h3 className="text-2xl font-semibold mb-2">Message Sent!</h3>
                   <p className="text-muted-foreground">
@@ -155,7 +163,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="contact-input"
+                      className="contact-input focus:ring-primary/50 focus:border-primary/50"
                     />
                   </div>
 
@@ -171,7 +179,7 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="your.email@example.com"
                       required
-                      className="contact-input"
+                      className="contact-input focus:ring-primary/50 focus:border-primary/50"
                     />
                   </div>
 
@@ -187,12 +195,22 @@ export default function Contact() {
                       placeholder="Your message..."
                       rows={5}
                       required
-                      className="contact-input resize-none"
+                      className="contact-input resize-none focus:ring-primary/50 focus:border-primary/50"
                     />
                   </div>
 
-                  <Button type="submit" className="w-full btn-primary" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                  <Button
+                    type="submit"
+                    className="w-full btn-primary relative overflow-hidden group glow-effect"
+                    disabled={isSubmitting}
+                    data-tooltip-id="global-tooltip"
+                    data-tooltip-content={isSubmitting ? "Sending message..." : "Send your message"}
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                      <Send className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-pink-600 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   </Button>
                 </form>
               )}

@@ -26,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "projects", "skills", "testimonials", "blog", "contact"]
-      const scrollPosition = window.scrollY + 200 // Increased offset for better detection
+      const scrollPosition = window.scrollY + 200
 
       // Find the last section that has been scrolled past
       let currentSection = sections[0]
@@ -46,7 +46,6 @@ export default function Home() {
     }
 
     window.addEventListener("scroll", handleScroll)
-    // Initial call to set the correct section on page load
     handleScroll()
 
     return () => window.removeEventListener("scroll", handleScroll)
@@ -57,7 +56,6 @@ export default function Home() {
       setActiveSection(e.detail)
     }
 
-    // Add event listener for custom section change events
     document.addEventListener("sectionChange", handleSectionChange as EventListener)
 
     return () => {
@@ -77,27 +75,36 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section id="about" className="py-20">
+      <section id="about" className="py-20 section-container">
         <About />
       </section>
 
-      <section id="projects" className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg">
+      <section
+        id="projects"
+        className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg section-container"
+      >
         <Projects />
       </section>
 
-      <section id="skills" className="py-20">
+      <section id="skills" className="py-20 section-container">
         <Skills />
       </section>
 
-      <section id="testimonials" className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg">
+      <section
+        id="testimonials"
+        className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg section-container"
+      >
         <Testimonials />
       </section>
 
-      <section id="blog" className="py-20">
+      <section id="blog" className="py-20 section-container">
         <Blog />
       </section>
 
-      <section id="contact" className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg">
+      <section
+        id="contact"
+        className="py-20 bg-black/30 dark:bg-black/30 light:bg-pink-50/50 animated-bg section-container"
+      >
         <Contact />
       </section>
 
