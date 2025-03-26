@@ -80,7 +80,7 @@ export default function Hero() {
             </Button>
 
             <Button variant="outline" className="border-primary/50 hover:bg-primary/10" asChild>
-              <a href="https://github.com/Clarrise" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/VoxDroid" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </a>
