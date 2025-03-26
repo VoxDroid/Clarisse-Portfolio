@@ -1,6 +1,6 @@
 # Clarisse Portfolio
 
-![Clarisse Portfolio Preview](public/preview.png) 
+![Clarisse Portfolio Preview](public/Preview.png) 
 
 A modern, customizable, and responsive portfolio template built with **Next.js** and **TypeScript**. Designed to showcase your skills, projects, and personality with a sleek interface, animated background, and professional features.
 
