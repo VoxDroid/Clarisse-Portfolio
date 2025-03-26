@@ -16,7 +16,7 @@ export default function Blog() {
       excerpt: "Learn how to leverage Rust's performance benefits in web applications by compiling to WebAssembly.",
       date: "May 15, 2023",
       readTime: "8 min read",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/Clarisse/Clarisse.png",
       tags: ["Rust", "WebAssembly", "Performance"],
       link: "#",
       likes: 124,
@@ -28,7 +28,7 @@ export default function Blog() {
         "Explore different state management approaches in Next.js and how to choose the right one for your project.",
       date: "June 22, 2023",
       readTime: "6 min read",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/Clarisse/Clarisse.png",
       tags: ["Next.js", "React", "State Management"],
       link: "#",
       likes: 98,
@@ -40,7 +40,7 @@ export default function Blog() {
         "A deep dive into building accessible UI components that work for everyone, with a focus on keyboard navigation and screen readers.",
       date: "July 10, 2023",
       readTime: "10 min read",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "/Clarisse/Clarisse.png",
       tags: ["Accessibility", "UI", "Frontend"],
       link: "#",
       likes: 156,
@@ -74,7 +74,7 @@ export default function Blog() {
             <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-500 flex flex-col card-3d-effect hover:border-primary/30 group">
               <div className="relative h-48 overflow-hidden group">
                 <img
-                  src={post.image || "/placeholder.svg"}
+                  src={post.image || "/Clarisse/Clarisse.png"}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

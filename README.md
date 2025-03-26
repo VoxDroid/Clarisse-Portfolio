@@ -4,7 +4,10 @@
 
 A modern, customizable, and responsive portfolio template built with **Next.js** and **TypeScript**. Designed to showcase your skills, projects, and personality with a sleek interface, animated background, and professional features.
 
+### **Live Demo**: Check out the deployed version at [clarisse-portfolio.vercel.app](https://clarisse-portfolio.vercel.app)
+
 ---
+
 
 ## Badges
 
@@ -16,6 +19,7 @@ A modern, customizable, and responsive portfolio template built with **Next.js**
 [![GitHub Issues](https://img.shields.io/github/issues/voxdroid/clarisse-portfolio.svg?style=flat)](https://github.com/voxdroid/clarisse-portfolio/issues)
 [![Last Commit](https://img.shields.io/github/last-commit/voxdroid/clarisse-portfolio.svg?style=flat)](https://github.com/voxdroid/clarisse-portfolio/commits/main)
 [![Downloads](https://img.shields.io/github/downloads/voxdroid/clarisse-portfolio/total.svg?style=flat)](https://github.com/voxdroid/clarisse-portfolio/releases)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-clarisse--portfolio.vercel.app-58a6ff.svg?style=flat&logo=vercel)](https://clarisse-portfolio.vercel.app)
 
 ---
 

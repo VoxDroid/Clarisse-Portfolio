@@ -99,7 +99,7 @@ export default function Hero() {
             <div className="relative bg-card rounded-full p-2 shadow-xl">
               <div className="aspect-square rounded-full overflow-hidden border-4 border-primary/20">
                 <img
-                  src="/placeholder.svg?height=400&width=400"
+                  src="/Clarisse/Clarisse.png"
                   alt="Clarisse"
                   className="w-full h-full object-cover"
                 />

@@ -13,25 +13,25 @@ export default function Testimonials() {
       id: 1,
       content:
         "Clarisse is an exceptional developer who delivered our Rust-based backend system ahead of schedule. The performance improvements were remarkable, and her communication throughout the project was excellent.",
-      author: "Alex Johnson",
+      author: "VoxDroid",
       position: "CTO, TechInnovate",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/Clarisse/Clarisse.png",
     },
     {
       id: 2,
       content:
         "Working with Clarisse on our Next.js project was a pleasure. She has a keen eye for design and user experience, while also ensuring the code is clean, maintainable, and performant.",
-      author: "Samantha Lee",
+      author: "VoxDroid",
       position: "Product Manager, DesignHub",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/Clarisse/Clarisse.png",
     },
     {
       id: 3,
       content:
         "Clarisse's expertise in Rust helped us optimize our data processing pipeline, resulting in a 40% reduction in processing time. Her ability to explain complex concepts in simple terms was invaluable.",
-      author: "Michael Chen",
+      author: "VoxDroid",
       position: "Lead Engineer, DataFlow",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/Clarisse/Clarisse.png",
     },
   ]
 

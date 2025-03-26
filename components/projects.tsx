@@ -14,7 +14,7 @@ export default function Projects() {
     {
       title: "Rust Web API",
       description: "A high-performance RESTful API built with Rust and Actix Web framework.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["rust", "backend", "api"],
       github: "#",
       demo: "#",
@@ -23,7 +23,7 @@ export default function Projects() {
     {
       title: "Next.js Portfolio",
       description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["next.js", "frontend", "tailwind"],
       github: "#",
       demo: "#",
@@ -32,7 +32,7 @@ export default function Projects() {
     {
       title: "Rust CLI Tool",
       description: "A command-line utility built with Rust for efficient file processing.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["rust", "cli", "tool"],
       github: "#",
       demo: null,
@@ -41,7 +41,7 @@ export default function Projects() {
     {
       title: "E-commerce Platform",
       description: "A full-stack e-commerce solution with Next.js frontend and Rust backend.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["next.js", "rust", "fullstack"],
       github: "#",
       demo: "#",
@@ -50,7 +50,7 @@ export default function Projects() {
     {
       title: "Data Visualization Dashboard",
       description: "Interactive data visualization dashboard built with React and D3.js.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["react", "frontend", "data"],
       github: "#",
       demo: "#",
@@ -59,7 +59,7 @@ export default function Projects() {
     {
       title: "Rust Game Engine",
       description: "A lightweight 2D game engine written in Rust with WebGL rendering.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/Clarisse/Clarisse.png",
       tags: ["rust", "gamedev", "graphics"],
       github: "#",
       demo: "#",
