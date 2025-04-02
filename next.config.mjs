@@ -1,6 +1,6 @@
 let userConfig = undefined
 try {
-  userConfig = await import('./v0-user-next.config')
+  userConfig = await import('./clarisse-portfolio.config')
 } catch (e) {
   // ignore error
 }
